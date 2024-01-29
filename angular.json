@@ -3,29 +3,19 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "site-games": {
+    "loja-games": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "standalone": false
-        },
-        "@schematics/angular:directive": {
-          "standalone": false
-        },
-        "@schematics/angular:pipe": {
-          "standalone": false
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/site-games",
+            "outputPath": "dist/loja-games",
             "index": "src/index.html",
-            "browser": "src/main.ts",
+            "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -35,18 +25,13 @@
               "src/assets"
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/indigo-pink.css",
               "node_modules/bootstrap/dist/css/bootstrap.css",
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.js"
-            ],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            ]
           },
           "configurations": {
             "production": {
@@ -65,9 +50,12 @@
               "outputHashing": "all"
             },
             "development": {
+              "buildOptimizer": false,
               "optimization": false,
+              "vendorChunk": true,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "namedChunks": true
             }
           },
           "defaultConfiguration": "production"
@@ -76,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "site-games:build:production"
+              "browserTarget": "loja-games:build:production"
             },
             "development": {
-              "buildTarget": "site-games:build:development"
+              "browserTarget": "loja-games:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -87,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "site-games:build"
+            "browserTarget": "loja-games:build"
           }
         },
         "test": {
@@ -113,6 +101,6 @@
     }
   },
   "cli": {
-    "analytics": "dbf533ad-6d99-4153-9ee1-de6d72826784"
+    "analytics": "8c8766ec-1754-4abb-b799-14e3b0199374"
   }
 }

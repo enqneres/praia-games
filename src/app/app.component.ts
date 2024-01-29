@@ -7,7 +7,7 @@ import { LoginService } from './login.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'LH Games';
+  title = 'Praia Games';
   mostrarMenu: boolean = true;
 
   constructor(private _loginService: LoginService){}
@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
       )
   }
 
-  //ngOnDestroy(){
-    //localStorage.clear();
-  //}
+  ngOnDestroy(){
+    localStorage.clear();
+  }
 }

@@ -23,10 +23,10 @@
     },
     {
       "id": "4",
-      "produto": "Jogo 4",
-      "descricao": "Descrição do jogo 4",
-      "foto": "jogo2.PNG",
-      "preco": 258
+      "produto": "Call of Duty: Modern Warfare",
+      "descricao": "Jogo de estratégia militar",
+      "foto": "jogo1.PNG",
+      "preco": 345
     }
   ]
 }
